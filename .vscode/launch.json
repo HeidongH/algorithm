@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch P_02",
+            "request": "launch",
+            "mainClass": "algorithm_Lv01.P_02",
+            "projectName": "algorithm_Lv01"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"
