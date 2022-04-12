@@ -1,7 +1,5 @@
 package algorithm_Lv01;
 
-import java.util.Arrays;
-
 public class P_05 {
     
     public static boolean sol(int x) {
