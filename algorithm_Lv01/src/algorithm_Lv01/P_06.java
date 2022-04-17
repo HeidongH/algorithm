@@ -2,6 +2,7 @@ package algorithm_Lv01;
 
 public class P_06 {
     public static void main(String[] args) {
+        // 평균 구하기
         
         int[] x = {1,2,3,4};
 
