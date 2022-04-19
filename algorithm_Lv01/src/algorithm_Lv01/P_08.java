@@ -15,6 +15,7 @@ public class P_08 {
             ans = (a+b) % 1234567;
             a = b;
             b = ans;
+            System.out.println(a +","+ b);
         }
 
         return ans;
