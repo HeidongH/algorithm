@@ -5,6 +5,8 @@ import java.util.Collections;
 
 public class P_13 {
     public long sol(long n) {
+        // 정수 내림차순으로 배치하기
+
         long ans = 0;
 
         String x = Long.toString(n);
