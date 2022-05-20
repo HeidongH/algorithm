@@ -3,7 +3,7 @@ package algorithm_Lv01;
 public class P_18 {
 	
 	public String sol(String s, int n) {
-		// ½ÃÀú ¾ÏÈ£
+		// ì‹œì € ì•”í˜¸
 		String ans = "";
 		
 		return ans;
