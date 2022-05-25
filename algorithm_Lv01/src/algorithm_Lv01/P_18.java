@@ -7,29 +7,28 @@ public class P_18 {
 	public String sol(String s, int n) {
 		// 시저 암호
 		String ans = "";
-		String [] r = s.split("");
+		char [] r = s.toCharArray();
 		
 		// 65 ~ 90 Upper
 		// 97 ~ 122 Lower
+		// 알파벳은 총 26개
 		
-		char x = 65;
-		int start = 0;
-		while(x <= 122) {
-			if(start >= r.length) break;
-			
-			if(r[start].equals(Character.toString(x))) {
-				/*if(r[start].equals("Z")) ans += "A";
-				else if(x == 122) ans += 97;*/
-				ans += Character.toString((char) (x+n));
-				start++;
+		char x;
+
+		for(int i=0; i<r.length; i++) {
+			if(Character.isUpperCase(r[i])) {
+				x = (char)(r[i]);
+				x = (x == 'Z') ? (x = (char)('A' + (n-1))) : (char)(x+n); 
+				ans += String.valueOf(x);
 				continue;
-			} else if(r[start].equals(" ")) {
-				ans += r[start]; 
-				start++;
+			} else if(Character.isLowerCase(r[i])) {
+				x = (char)(r[i]);
+				x = (x == 'z') ? (x = (char)('a' + (n-1))) : (char)(x+n);
+				ans += String.valueOf(x);
 				continue;
 			}
 			
-			x++;
+			ans += r[i];
 			
 		}
 		
@@ -40,8 +39,8 @@ public class P_18 {
 	public static void main(String[] args) {
 		P_18 p = new P_18();
 		
-		String s = "AB C d z Z";
-		int n = 1;
+		String s = "a B z";
+		int n = 4;
 		
 		System.out.println(p.sol(s, n));
 		
