@@ -5,13 +5,13 @@ import java.util.Arrays;
 public class P_18 {
 	
 	public String sol(String s, int n) {
-		// ½ÃÀú ¾ÏÈ£
+		// ì‹œì € ì•”í˜¸
 		String ans = "";
 		char [] r = s.toCharArray();
 		
 		// 65 ~ 90 Upper
 		// 97 ~ 122 Lower
-		// ¾ËÆÄºªÀº ÃÑ 26°³
+		// ì•ŒíŒŒë²³ì€ ì´ 26ê°œ
 		
 		char x;
 
