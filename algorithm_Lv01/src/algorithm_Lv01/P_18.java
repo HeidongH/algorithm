@@ -1,39 +1,34 @@
 package algorithm_Lv01;
 
-import java.util.Arrays;
-
 public class P_18 {
 	
 	public String sol(String s, int n) {
 		// 시저 암호
-		String ans = "";
-		char [] r = s.toCharArray();
 		
 		// 65 ~ 90 Upper
 		// 97 ~ 122 Lower
 		// 알파벳은 총 26개
 		
+		String ans = "";
 		char x;
-
-		for(int i=0; i<r.length; i++) {
-			if(Character.isUpperCase(r[i])) {
-				x = (char)(r[i]);
-				x = (x == 'Z') ? (x = (char)('A' + (n-1))) : (char)(x+n); 
-				ans += String.valueOf(x);
-				continue;
-			} else if(Character.isLowerCase(r[i])) {
-				x = (char)(r[i]);
-				x = (x == 'z') ? (x = (char)('a' + (n-1))) : (char)(x+n);
-				ans += String.valueOf(x);
-				continue;
+		
+		for(int i=0; i<s.length(); i++) {
+			x = s.charAt(i);
+			
+			if(Character.isUpperCase(x)) {
+				x = (char)((x - 'A' + n) % 26 + 'A');
+				// char와 int의 계산을 위해 'A'를 뺏다가 더함
+				// x+n이 Z를 넘어 갔을경우를 대비해 26의 나머지를 구한다. (27부터 1으로 시작)
+			} else if(Character.isLowerCase(x)) {
+				x = (char)((x - 'a' + n) % 26 + 'a');
 			}
 			
-			ans += r[i];
+			ans += x;
 			
 		}
 		
-		System.out.println(Arrays.toString(r));
 		return ans;
+		
 	}
 
 	public static void main(String[] args) {
