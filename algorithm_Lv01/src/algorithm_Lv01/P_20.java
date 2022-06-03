@@ -2,6 +2,8 @@ package algorithm_Lv01;
 
 class P_20 {
     public String solution(int n) {
+    	// 수박수박수박수?
+    	
         String answer = "";
 
         for(int i=1; i<=n; i++) {
