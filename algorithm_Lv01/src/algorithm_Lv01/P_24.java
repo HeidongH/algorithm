@@ -7,7 +7,7 @@ public class P_24 {
 		
 		String[] x = s.split("");
 		
-		String compare = "";
+		
 		
 		
 		
@@ -15,8 +15,12 @@ public class P_24 {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// 문자열 내림차순으로 배치하기
 
+		P_24 p = new P_24();
+		String s = "Zbcdefg";
+
+		System.out.println(p.sol(s));
 	}
 
 }
