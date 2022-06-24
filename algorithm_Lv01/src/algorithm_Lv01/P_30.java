@@ -17,15 +17,29 @@ public class P_30 {
 		return cnt;
 	}
 
+    public static int star(int before, int now) {
+        return (before*2) + (now*2);
+    }
+
+    public static int shop(int before, int now) {
+        return before + (now * -1);
+    }
+
     public int solution(String dartResult) {
-        // 다트 게임
+        // dart game
         int answer = 0;
+        int before = 0;
         int cnt = 0;
 
         String [] arr = dartResult.split("");
 
         for(int i=0; i<arr.length; i++) {
-        	
+            // check 10
+        	if(arr[i+1].equals("0") && !arr[i+2].equals("*") && !arr[i+2].equals("#")) {
+                answer += Math.pow(10, check(arr[i+2]));
+            } else if() {
+                
+            }
         }
 
 
