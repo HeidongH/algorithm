@@ -1,47 +1,37 @@
 package algorithm_Lv01;
 
 public class P_30 {
-	
-	public static Double check(String x) {
-		
-		double cnt = 0;
-		
-		if(x.equals("S")) {
-			cnt = 1;
-		} else if(x.equals("D")) {
-			cnt = 2;
-		} else if(x.equals("T")) {
-			cnt = 3;
-		}
-		
-		return cnt;
-	}
-
-    public static int star(int before, int now) {
-        return (before*2) + (now*2);
-    }
-
-    public static int shop(int before, int now) {
-        return before + (now * -1);
-    }
 
     public int solution(String dartResult) {
         // dart game
         int answer = 0;
-        int before = 0;
-        int cnt = 0;
 
-        String [] arr = dartResult.split("");
+        char [] arr = dartResult.toCharArray();
+        int [] round = new int[3]; // 3개의 라운드
+        int idx = -1;
 
         for(int i=0; i<arr.length; i++) {
-            // check 10
-        	if(arr[i+1].equals("0") && !arr[i+2].equals("*") && !arr[i+2].equals("#")) {
-                answer += Math.pow(10, check(arr[i+2]));
-            } else if() {
-                
+            if(Character.isDigit(arr[i])) { // i가 숫자라면
+                idx++;
+                if(arr[i] == '0') { // 10일 경우 체크
+                    // 여기 해야함.
+                }
+                round[idx] = Character.getNumericValue(arr[i]); // 배열에 담음
+            } else if(arr[i] == 'S') { // 계산 불필요
+                continue;
+            } else if(arr[i] == 'D') { // 2제곱
+                round[idx] = (int) Math.pow(round[idx], 2);
+            } else if(arr[i] == 'T') { // 3제곱
+                round[idx] = (int) Math.pow(round[idx], 3);
+            } else if(arr[i] == '*') { // 이전 점수, 현재 점수 x2
+                round[idx-1] *= 2;
+                round[idx] *= 2;
+            } else if(arr[i] == '#') { // 현재 점수 * -1
+                round[idx] *= -1;
             }
         }
-
+        
+        answer = round[0] + round[1] + round[2];
 
         return answer;
     }
