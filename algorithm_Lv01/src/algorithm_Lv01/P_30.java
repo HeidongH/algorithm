@@ -1,5 +1,7 @@
 package algorithm_Lv01;
 
+import java.util.Arrays;
+
 public class P_30 {
 
     public int solution(String dartResult) {
@@ -42,7 +44,8 @@ public class P_30 {
             }
         }
         
-        answer = round[0] + round[1] + round[2];
+        // answer = round[0] + round[1] + round[2];
+        answer = Arrays.stream(round).sum();
 
         return answer;
     }
