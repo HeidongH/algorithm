@@ -6,7 +6,7 @@ public class P_35 {
 		// 나머지가 1이 되는 수 찾기
 		
         int answer = 0;
-        for(int i=1; i<n; i++) {
+        for(int i=2; i<n; i++) {
             if(n % i == 1) {
                 answer = i;
                 break;
