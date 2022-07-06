@@ -6,8 +6,8 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		int x = 1;
-		int n = 5;
+		int x = 21;
+		int n = 6;
 
 		Stack<String> stack = new Stack<>();
 		String[] list = new String[n]; // 2진수 저장 배열 (방크기는 한변의 길이 n)
@@ -20,16 +20,20 @@ public class Test {
 			}
 		}
 
-		int check = 0;
 		if(stack.size() != n) {
+			int check = 0;
 			for(int i=0; i<n - stack.size(); i++) {
 				list[i] = "0";
 				check = i;
 			}
-		}
-
-		while(!stack.empty()) { // stack에서 위에서부터 꺼내면서 출력
-			list[check+1] = stack.pop();
+			while(!stack.empty()) { // stack에서 위에서부터 꺼내면서 출력
+				list[check+1] = stack.pop();
+				check++;
+			}
+		} else {
+			for(int i=0; i<list.length; i++) {
+				list[i] = stack.pop();
+			}
 		}
 
 		for(String s : list) {
