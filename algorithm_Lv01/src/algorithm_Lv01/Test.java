@@ -65,8 +65,6 @@ public class Test {
 		int[] arr2 = {27 ,56, 19, 14, 14, 10};
 		
 		System.out.println(Arrays.toString(solution(n, arr1, arr2)));
-		
-		// 집 깃 잔디 테스트
 	}
 
 }
