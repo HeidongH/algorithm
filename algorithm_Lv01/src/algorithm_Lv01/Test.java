@@ -5,6 +5,8 @@ import java.util.Stack;
 public class Test {
 
 	public String[] binary(int x, int n) {
+		
+		// 10진수 -> 2진수 변환
 
 		Stack<String> stack = new Stack<>();
 		String[] list = new String[n]; // 2진수 저장 배열 (방크기는 한변의 길이 n)
