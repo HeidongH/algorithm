@@ -66,7 +66,7 @@ public class Test {
 		
 		System.out.println(Arrays.toString(solution(n, arr1, arr2)));
 		
-
+		// 집 깃 잔디 테스트
 	}
 
 }
