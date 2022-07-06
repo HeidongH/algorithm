@@ -4,10 +4,7 @@ import java.util.Stack;
 
 public class Test {
 
-	public static void main(String[] args) {
-
-		int x = 21;
-		int n = 6;
+	public String[] binary(int x, int n) {
 
 		Stack<String> stack = new Stack<>();
 		String[] list = new String[n]; // 2진수 저장 배열 (방크기는 한변의 길이 n)
@@ -36,11 +33,18 @@ public class Test {
 			}
 		}
 
-		for(String s : list) {
+		return list;
+	}
+
+	public static void main(String[] args) {
+
+		int x = 21;
+		int n = 6;
+		
+		Test t = new Test();
+		for(String s : t.binary(x, n)) {
 			System.out.println(s);
 		}
-		
-		
 
 	}
 
