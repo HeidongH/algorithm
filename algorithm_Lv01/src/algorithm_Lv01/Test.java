@@ -56,15 +56,41 @@ public class Test {
         return result;
     }
 
+	public static String makeSharp(int n, int m) { // n = 합쳐진 10진수, m = 한변의 길이
+        if(n == 0) { // 10진수 0은 2진수도 0
+            if( m > 0) { // 한 변의 길이가 5이상일때(2진수 자리수) 앞자리 공백용
+                String str = "";
+                for(int i = 0; i < m; i++) {
+                    str += " ";
+                }
+                return str;
+            }
+            else return "";
+        }
+        else {
+            return n % 2 == 0 ? makeSharp(n/2, m-1) + " " : makeSharp(n/2, m-1) + "#"; 
+        }
+    }
+    public static String[] solution2(int n, int [] arr1, int [] arr2) {
+        String [] answer = new String[n];
+        int [] secretMap = new int[n];
+        for(int i = 0; i < n; i++) {
+            secretMap[i] = arr1[i] | arr2[i]; // 2개 배열의 원소를 2진수 비트 단위 연산 한 것임.
+			System.out.println(i + " " +secretMap[i]);
+            answer[i] = makeSharp(secretMap[i], n);
+        }
+        return answer;
+    }
+
 	public static void main(String[] args) {
 
 		int x = 21;
-		int n = 6;
+		int n = 5;
 		
-		int[] arr1 = {46, 33, 33 ,22, 31, 50};
-		int[] arr2 = {27 ,56, 19, 14, 14, 10};
+		int[] arr1 = {9, 20, 28, 18, 11};
+		int[] arr2 = {30, 1, 21, 17, 28};
 		
-		System.out.println(Arrays.toString(solution(n, arr1, arr2)));
+		System.out.println(Arrays.toString(solution2(n, arr1, arr2)));
 	}
 
 }
