@@ -1,13 +1,15 @@
 package algorithm_Lv01;
 
+import java.util.Arrays;
+
 public class Test {
 
 	public static void main(String[] args) {
 		
-		double one = 0.125;
-		double two = 0.42857;
+		int[] list = {1,2,3,4,5};
+		int[] x = list;
 		
-		System.out.println(one < two);
+		System.out.println(Arrays.toString(x));
 
 	}
 
