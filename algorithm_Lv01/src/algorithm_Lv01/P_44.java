@@ -6,22 +6,22 @@ public class P_44 {
 	
 	public int solution(int a, int b, int n) {
 		
-		if(n < a) { // 빈병이 교환할 만큼 없음
+		if(n < a) { 
 			return ans; 
 		}
 		
-        int plus = n / a; // 6병의 콜라
-        int minus = plus * a;
-        int answer = n - minus + plus;
+		int minus = (n / a) * a;
+        int plus = (minus / a) * b; 
+        int empty = n - minus + plus;
         ans += plus;
         
-        return solution(a, b, answer);
+        return solution(a, b, empty);
     }
 
 	public static void main(String[] args) {
 		// 콜라문제
 		int a = 3;
-		int b = 1;
+		int b = 2;
 		int n = 20;
 		
 		P_44 p = new P_44();
