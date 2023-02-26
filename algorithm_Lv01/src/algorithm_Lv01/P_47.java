@@ -1,23 +1,30 @@
 package algorithm_Lv01;
 
-import java.util.Arrays;
-
 public class P_47 {
 	
-	public int solution(String s, String skip, int index) {
-        int answer = 0;
-        
-        char[] alphabet = new char[26];
-        
-        int cnt = 0;
-        for(int i=97; i<=122; i++) {
-            alphabet[cnt] = (char)(i);
-            cnt++;
-        }
-        
-        System.out.println(Arrays.toString(alphabet));
-        
-        return answer;
+	public String solution(String s, String skip, int index) {
+		String answer = "";
+		
+		/*
+		 * s의 문자열 전체를 돌면서 skip할 문자열을 찾아야하니 반복문은 2개로
+		 * 영문자는 아스키 코드로 97 ~ 122임 그래서 문자열 s의 다음 문자가 122를 넘어가게 되면 다시 97인 a로 돌아가게한다.
+		 * 그리고 스킵할 문자가 포함되어 있다면 반복문 횟수를 1회 더 늘린다.
+		 * 문자열에 "" 공백을 더하는 이유는 contains함수를 사용하기 위해 String 형태로 변환 한것이다.
+		 */
+		
+		for(char x : s.toCharArray()) {
+			for(int i=0; i<index; i++) {
+				if(++x > 122) {
+					x = 'a';
+				}
+				if(skip.contains(x+"")) {
+					i--;
+				}
+			}
+			answer += x;
+		}
+		
+		return answer;
     }
 
 	public static void main(String[] args) {
