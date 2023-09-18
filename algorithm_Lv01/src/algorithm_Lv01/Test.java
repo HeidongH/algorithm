@@ -1,15 +1,21 @@
 package algorithm_Lv01;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Test {
 
 	public static void main(String[] args) {
 		
-		int[] list = {1,2,3,4,5};
-		int[] x = list;
+		char[] x = {'A', 'B', 'C'};
+		ArrayList<Character> list = new ArrayList<>();
 		
-		System.out.println(Arrays.toString(x));
+		for(char a : x) {
+			list.add(a);
+		}
+		
+		
+        
+        System.out.println(list.get(1));
 
 	}
 
