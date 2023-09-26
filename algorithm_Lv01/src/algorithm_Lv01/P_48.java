@@ -4,7 +4,6 @@ import java.util.*;
 public class P_48 {
 	
     public String[] solution(String[] players, String[] callings) {
-        String[] answer = new String[players.length];
         Map<String, Integer> map = new HashMap<>();
         
         // 플레이어 이름과 순번 map에 담기
