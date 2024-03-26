@@ -1,22 +1,37 @@
 package algorithm_Lv01;
 
-import java.util.*;
+class Test {
+	// 간단한 식 계산하기
+	public int solution(String binomial) {
+		int answer = 0;
+		String[] words = binomial.split(" ");
+		int front = Integer.parseInt(words[0]);
+		int back = Integer.parseInt(words[2]);
+		String ot = words[1];
 
-public class Test {
+		switch (ot) {
+			case "+":
+				answer = front + back;
+				break;
+			case "-":
+				answer = front - back;
+				break;
+			case "*":
+				answer = front * back;
+				break;
+			case "/":
+				answer = front / back;
+				break;
+		}
+
+		return answer;
+	}
 
 	public static void main(String[] args) {
-		
-		char[] x = {'A', 'B', 'C'};
-		ArrayList<Character> list = new ArrayList<>();
-		
-		for(char a : x) {
-			list.add(a);
-		}
-		
-		
-        
-        System.out.println(list.get(1));
-
+		Test t = new Test();
+		String binomial = "43 + 12";
+		int answer = t.solution(binomial);
+		System.out.println(answer);
 	}
 
 }
